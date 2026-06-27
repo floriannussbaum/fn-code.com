@@ -1,0 +1,12 @@
+{
+  "name": "fn-code",
+  "short_name": "fn-code",
+  "description": "fn-code – Portfolio von Florian Nußbaum",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "de",
+  "dir": "ltr",
+  "orientation": "any",
+  "id": "/"
+}

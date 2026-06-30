@@ -69,7 +69,7 @@ export default defineNuxtConfig({
     },
   },
 
-  devtools: { enabled: true }, // Disable for production
+  devtools: { enabled: false }, // Disable for production
 
   runtimeConfig: {
     public: {

@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['@unocss/nuxt', '@vueuse/nuxt'],
+  modules: ['@unocss/nuxt', '@vueuse/nuxt', '@nuxtjs/i18n'],
 
   compatibilityDate: '2026-06-27',
 
@@ -80,6 +80,16 @@ export default defineNuxtConfig({
         title: 'Florian Nußbaum',
       },
     },
+  },
+
+  // Use 'nuxi prepare' to sync locales
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', language: 'en-US', file: 'en.json' },
+      { code: 'de', name: 'Deutsch', language: 'de-DE', file: 'de.json' },
+    ],
+    defaultLocale: 'de',
+    langDir: './',
   },
 
   unocss: {

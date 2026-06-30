@@ -12,8 +12,7 @@
           {{ error?.statusCode ?? 404 }}
         </h1>
         <h2 class="text-font-secondary mt-2 sm:mt-0">
-          Ups! Diese Seite konnte leider nicht gefunden werden.
-          <!-- This page could not be found. -->
+          {{ $t('error.404') }}
         </h2>
       </div>
     </div>
@@ -23,18 +22,19 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app'
 
+const { t } = useI18n()
+
 defineProps({
   error: Object as () => NuxtError,
 })
 
 useHead({
-  title: 'Fehler | Florian Nußbaum',
+  title: `${t('error.404.title')} | Florian Nußbaum`,
 })
 
 useSeoMeta({
   robots: 'noindex, nofollow',
-  description:
-    'Entschuldigung, die angeforderte Seite konnte nicht gefunden werden.',
+  description: t('error.404.description'),
 })
 
 definePageMeta({

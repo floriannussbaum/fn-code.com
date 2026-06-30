@@ -13,7 +13,9 @@
     </div>
 
     <div class="flex justify-center text-center">
-      <h1 class="sr-only">Florian Nußbaum – Frontend Developer</h1>
+      <h1 class="sr-only">
+        Florian Nußbaum – {{ $t('content.about.jobTitle') }}
+      </h1>
 
       <div
         aria-hidden="true"
@@ -60,13 +62,14 @@
           }"
         >
           <p
+            lang="en"
             class="font-900"
             :style="{
               transition: `transform ${duration}ms cubic-bezier(0.5, 0, 0, 1) ${delay}ms`,
               transform: isAnimate ? 'translateX(0%)' : 'translateX(200%)',
             }"
           >
-            Frontend Developer
+            {{ $t('content.about.jobTitle') }}
           </p>
         </div>
       </div>

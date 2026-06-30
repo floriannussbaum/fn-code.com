@@ -7,10 +7,12 @@
 <script setup lang="ts">
 import './assets/main.css'
 
+const { t, locale } = useI18n()
+
 useHead({
   htmlAttrs: {
     class: 'h-full bg-white text-[--default]',
-    lang: 'de', // TODO: Change if i18n is implemented
+    lang: () => locale.value,
   },
   bodyAttrs: {
     class: 'h-full',
@@ -21,7 +23,7 @@ useHead({
     const brandName = 'Florian Nußbaum'
     return titleChunk
       ? `${titleChunk} | ${brandName}`
-      : `${brandName} – Frontend Developer` // – Frontend Developer
+      : `${brandName} – ${t('content.about.jobTitle')}`
   },
 
   // Noscript message

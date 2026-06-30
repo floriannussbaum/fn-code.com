@@ -6,7 +6,7 @@
       class="page-container flex items-center justify-between backdrop-blur lg:px-4"
     >
       <!-- desktop menu -->
-      <nav aria-label="Hauptmenü" class="hidden sm:block">
+      <nav :aria-label="$t('ariaLabel.nav.desktop')" class="hidden sm:block">
         <ul class="flex text-sm">
           <li v-for="(item, i) in menuItems" :key="i">
             <NuxtLink
@@ -27,30 +27,23 @@
 
       <!-- mobile menu -->
       <div class="mx-1.4 my-1 block sm:hidden">
-        <PageHeaderButton
+        <button
           id="burger-menu"
-          class="!p-1.8 !h-11"
-          aria-label="Menü öffnen"
+          type="button"
+          class="page-header-button !p-1.8 !h-11"
+          :aria-label="$t('ariaLabel.nav.mobile')"
           aria-controls="mobile-drawer"
           :aria-expanded="clickEvent ? true : false"
           @click="clickEvent = $event"
         >
           <Bars3Icon class="h-full w-auto" />
-        </PageHeaderButton>
+        </button>
       </div>
 
       <!-- actions buttons -->
       <div class="mx-1.4 my-1">
-        <!-- TODO: Add language switcher after i18n is implemented -->
-        <!-- Change language to German -->
-        <!-- <PageHeaderButton
-          lang="en"
-          hreflang="en"
-          aria-label="Sprache auf Englisch ändern"
-        >
-          <LanguageIcon class="h-full w-auto" />
-        </PageHeaderButton> -->
-        <PageHeaderDarkMode />
+        <PageHeaderActionLanguage />
+        <PageHeaderActionDarkMode />
       </div>
     </div>
 

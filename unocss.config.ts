@@ -59,6 +59,7 @@ export default defineConfig({
     'page-space': 'px-4 lg:px-8',
     'section-box': 'space-y-12 py-20',
     'half-container': 'max-w-160',
+    'page-header-button': 'p-2.4 hover:bg-button inline-flex h-10 rounded-full',
   },
 
   presets: [

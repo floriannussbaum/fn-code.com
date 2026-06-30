@@ -1,0 +1,74 @@
+{
+  "lang": {
+    "invert": "en",
+    "label": "Englisch"
+  },
+  "ariaLabel": {
+    "nav": {
+      "desktop": "Hauptmenü",
+      "mobile": "Menü öffnen",
+      "drawer": "Mobiles Hauptmenü",
+      "action": {
+        "darkMode": "Dunkelmodus",
+        "language": "Website auf Englisch anzeigen"
+      }
+    },
+    "eMail": "E-Mail an Florian Nußbaum",
+    "gitHub": "GitHub Profil von Florian Nußbaum",
+    "linkedIn": "LinkedIn Profil von Florian Nußbaum",
+    "video": "Video: Florian Nußbaum in Aktion."
+  },
+  "content": {
+    "about": {
+      "jobTitle": "Frontend Developer",
+      "text": "Hi. Ich bin ein {0} mit Fokus auf TypeScript und moderne Webtechnologien wie Vue und React. Ich entwickle skalierbare Frontends, generische UI-Komponenten und performante Webanwendungen — von Headless-CMS-Projekten bis hin zu PWAs und Hybrid-Apps. Dabei lege ich Wert auf sauberen, wartbaren Code und eine enge Zusammenarbeit mit Design-, Produkt- und Backend-Teams."
+    },
+    "projects": {
+      "team-escalate": "Ein echtes Herzensprojekt von mir, das ich seit 2013 betreue. Team Escalate ist ein Sportverein für Parkour, Freerunning und Tricking in Halle (Saale). Ich habe die Website von Grund auf neu gestaltet und entwickelt, um sie moderner, benutzerfreundlicher und ansprechender zu gestalten.",
+      "btc-dashboard": "Ein persönliches Dashboard zur Echtzeit-Analyse von Bitcoin-Marktdaten über verschiedene APIs. Das Projekt wurde zum Großteil mittels KI entwickelt, um in diesem Bereich mehr praktische Erfahrung zu sammeln. Das Tool visualisiert wichtige Kennzahlen wie die Marktkapitalisierung und berechnet den Portfolio-Wert dynamisch aus einer JSON-Transaktionsdatei.",
+      "sound-of-code": "Ein experimentelles Projekt, das ich entwickelt habe, um die Möglichkeit zu erkunden, Code in Klang umzuwandeln. Es nutzt die Web Audio API, um Code-Snippets in Echtzeit in Klang zu übersetzen.",
+      "frendies-ug": "Ein code Überbleibsel aus einer damaligen Selbstständigkeit, die ich 2014 betrieben habe. Obwohl das Projekt nicht weiterentwickelt wird, war es eine wertvolle Erfahrung in der Entwicklung moderner Webtechnologien mit WebGL. Es bietet eine interaktive 3D-Erfahrung, die es Benutzern ermöglicht, mit Elementen zu interagieren."
+    },
+    "balance": {
+      "text": "In meiner Freizeit bin ich sportlich aktiv und betreibe Parkour/Freerunning, was mir die Möglichkeit bietet, meinen Ausgleich zu finden. Im Zuge dessen betreue ich seit 2013 verschiedene Projekte und Prozesse für Kinder und Jugendliche, um ihnen einen sicheren Raum für den Sport zu bieten."
+    },
+    "footer": {
+      "text": "Entwickelt in {0} und umgesetzt mit {1}, {2} und {3}. Alle Texte sind in der Schriftart {4} gesetzt."
+    }
+  },
+  "menu": {
+    "about": "Über mich",
+    "projects": "Projekte",
+    "balance": "Balance",
+    "contact": "Kontakt",
+    "legalNotice": "Impressum",
+    "privacyPolicy": "Datenschutz"
+  },
+  "error": {
+    "404": "Ups! Diese Seite konnte leider nicht gefunden werden.",
+    "video": "Ihr Browser unterstützt das Video-Tag leider nicht. Das Video zeigt Florian Nußbaum in Aktion."
+  },
+  "seo": {
+    "home": {
+      "description": "Frontend Developer mit Fokus auf TypeScript und moderne Webtechnologien wie Vue und React.",
+      "ogTitle": "Florian Nußbaum – Frontend Developer",
+      "ogDescription": "Frontend Developer mit Fokus auf TypeScript und moderne Webtechnologien wie Vue und React."
+    },
+    "legalNotice": {
+      "title": "Impressum",
+      "description": "Impressum von Florian Nußbaum – Gesetzlich vorgeschriebene Angaben und Kontaktinformationen.",
+      "ogTitle": "Impressum | Florian Nußbaum",
+      "ogDescription": "Impressum von Florian Nußbaum – Gesetzlich vorgeschriebene Angaben und Kontaktinformationen."
+    },
+    "privacyPolicy": {
+      "title": "Datenschutzerklärung",
+      "description": "Datenschutzerklärung von Florian Nußbaum – Informationen zur Verarbeitung personenbezogener Daten.",
+      "ogTitle": "Datenschutzerklärung | Florian Nußbaum",
+      "ogDescription": "Datenschutzerklärung von Florian Nußbaum – Informationen zur Verarbeitung personenbezogener Daten."
+    },
+    "404": {
+      "title": "Fehler | Florian Nußbaum",
+      "description": "Entschuldigung, die angeforderte Seite konnte nicht gefunden werden."
+    }
+  }
+}

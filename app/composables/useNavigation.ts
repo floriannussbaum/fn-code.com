@@ -12,6 +12,8 @@ export const useNavigation = () => {
     () => 'about',
   )
   const route = useRoute()
+  const { t } = useI18n()
+  const localePath = useLocalePath()
 
   watch(
     () => route.path,
@@ -25,11 +27,27 @@ export const useNavigation = () => {
     { immediate: true },
   )
 
-  const menuItems = ref<MenuItem[]>([
-    { name: 'about', title: 'Über mich', link: '/#about' },
-    { name: 'projects', title: 'Projekte', link: '/#projects' },
-    { name: 'balance', title: 'Balance', link: '/#balance' },
-    { name: 'contact', title: 'Kontakt', link: '/#contact' },
+  const menuItems = computed<MenuItem[]>(() => [
+    {
+      name: 'about',
+      title: t('menu.about'),
+      link: localePath('/#about'),
+    },
+    {
+      name: 'projects',
+      title: t('menu.projects'),
+      link: localePath('/#projects'),
+    },
+    {
+      name: 'balance',
+      title: t('menu.balance'),
+      link: localePath('/#balance'),
+    },
+    {
+      name: 'contact',
+      title: t('menu.contact'),
+      link: localePath('/#contact'),
+    },
   ])
 
   const order = menuItems.value.map((item) => item.name)

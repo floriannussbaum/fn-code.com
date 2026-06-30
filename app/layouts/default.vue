@@ -1,9 +1,9 @@
 <template>
-  <ControlColorMode>
+  <ActionTransition>
     <PageHeader />
     <main>
       <slot />
     </main>
     <PageFooter />
-  </ControlColorMode>
+  </ActionTransition>
 </template>

@@ -1,0 +1,74 @@
+{
+  "lang": {
+    "invert": "de",
+    "label": "German"
+  },
+  "ariaLabel": {
+    "nav": {
+      "desktop": "Main menu",
+      "mobile": "Open menu",
+      "drawer": "Mobile main menu",
+      "action": {
+        "darkMode": "Dark mode",
+        "language": "Display website in German"
+      }
+    },
+    "eMail": "Email to Florian Nußbaum",
+    "gitHub": "GitHub profile of Florian Nußbaum",
+    "linkedIn": "LinkedIn profile of Florian Nußbaum",
+    "video": "Video: Florian Nußbaum in action."
+  },
+  "content": {
+    "about": {
+      "jobTitle": "Frontend Developer",
+      "text": "Hi. I'm a {0} with a focus on TypeScript and modern web technologies like Vue and React. I develop scalable frontends, generic UI components, and high-performance web applications — from headless CMS projects to PWAs and hybrid apps. I value clean, maintainable code and close collaboration with design, product, and backend teams."
+    },
+    "projects": {
+      "team-escalate": "A true passion project of mine that I've been managing since 2013. Team Escalate is a sports club for Parkour, Freerunning, and Tricking based in Halle (Saale). I redesigned and developed the website from scratch to make it more modern, user-friendly, and appealing.",
+      "btc-dashboard": "A personal dashboard for real-time analysis of Bitcoin market data using various APIs. The project was largely developed using AI to gain more practical experience in this field. The tool visualizes key metrics such as market capitalization and dynamically calculates portfolio value from a JSON transaction file.",
+      "sound-of-code": "An experimental project I developed to explore the possibility of converting code into sound. It uses the Web Audio API to translate code snippets into sound in real-time.",
+      "frendies-ug": "A part of code from a startup I founded in 2014. Although the project is no longer being developed, it was a valuable experience working with modern web technologies like WebGL. It offers an interactive 3D experience that allows users to interact with elements."
+    },
+    "balance": {
+      "text": "In my free time, I am active in sports and practice Parkour and Freerunning, which allows me to find balance. In this context, I have been managing various projects and processes for children and young people since 2013, creating a safe space for them to engage in the sport."
+    },
+    "footer": {
+      "text": "Coded in {0} and built with {1}, {2}, and {3}. All texts are set in the font {4}."
+    }
+  },
+  "menu": {
+    "about": "About me",
+    "projects": "Projects",
+    "balance": "Balance",
+    "contact": "Contact",
+    "legalNotice": "Legal Notice",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "error": {
+    "404": "Oops! This page could not be found.",
+    "video": "Unfortunately, your browser does not support the video tag. The video shows Florian Nußbaum in action."
+  },
+  "seo": {
+    "home": {
+      "description": "Frontend Developer with a focus on TypeScript and modern web technologies like Vue and React.",
+      "ogTitle": "Florian Nußbaum – Frontend Developer",
+      "ogDescription": "Frontend Developer with a focus on TypeScript and modern web technologies like Vue and React."
+    },
+    "legalNotice": {
+      "title": "Legal Notice",
+      "description": "Legal Notice of Florian Nußbaum – Legally required information and contact details.",
+      "ogTitle": "Legal Notice | Florian Nußbaum",
+      "ogDescription": "Legal Notice of Florian Nußbaum – Legally required information and contact details."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "description": "Privacy Policy of Florian Nußbaum – Information on the processing of personal data.",
+      "ogTitle": "Privacy Policy | Florian Nußbaum",
+      "ogDescription": "Privacy Policy of Florian Nußbaum – Information on the processing of personal data."
+    },
+    "404": {
+      "title": "Error | Florian Nußbaum",
+      "description": "Sorry, the requested page could not be found."
+    }
+  }
+}

@@ -9,16 +9,16 @@
         <ElementH2 title="Florian" subtitle="Nuẞbaum" />
         <ContentSocial />
         <TemplateContent title="About">
-          Hi. Ich bin ein
-          <strong>Frontend Developer</strong> mit Fokus auf TypeScript und
-          moderne Webtechnologien wie Vue und React. Ich entwickle skalierbare
-          Frontends, generische UI-Komponenten und performante Webanwendungen —
-          von Headless-CMS-Projekten bis hin zu PWAs und Hybrid-Apps. Dabei lege
-          ich Wert auf sauberen, wartbaren Code und eine enge Zusammenarbeit mit
-          Design-, Produkt- und Backend-Teams.
+          <span
+            v-html="
+              t('content.about.text', [
+                `<strong lang='en'>${t('content.about.jobTitle')}</strong>`,
+              ])
+            "
+          />
         </TemplateContent>
         <TemplateContent title="Skills" class="uppercase">
-          Frontend & Mobile
+          <span lang="en">Frontend & Mobile</span>
           <template #badges>
             <ElementBadge>HTML</ElementBadge>
             <ElementBadge>CSS</ElementBadge>
@@ -34,7 +34,7 @@
           </template>
         </TemplateContent>
         <TemplateContent class="uppercase">
-          Backend & Services
+          <span lang="en">Backend & Services</span>
           <template #badges>
             <ElementBadge>PHP</ElementBadge>
             <ElementBadge>SQL</ElementBadge>
@@ -43,7 +43,7 @@
           </template>
         </TemplateContent>
         <TemplateContent class="uppercase">
-          Tooling, Testing & Workflow
+          <span lang="en">Tooling, Testing & Workflow</span>
           <template #badges>
             <ElementBadge>Git</ElementBadge>
             <ElementBadge>Bitbucket</ElementBadge>
@@ -69,15 +69,11 @@
         class="page-space section-box half-container lg:mr-auto"
         :ref="(el) => observeSection(el as HTMLElement | null, 'projects')"
       >
-        <ElementH2 title="Personal" subtitle="Projects" />
+        <ElementH2 title="Personal" subtitle="Projects" lang="en" />
         <ul class="space-y-12">
           <li>
             <TemplateContent title="Team Escalate">
-              Ein echtes Herzensprojekt von mir, das ich seit 2013 betreue. Team
-              Escalate ist ein Sportverein für Parkour, Freerunning und Tricking
-              in Halle (Saale). Ich habe die Website von Grund auf neu gestaltet
-              und entwickelt, um sie moderner, benutzerfreundlicher und
-              ansprechender zu gestalten.
+              {{ t('content.projects.team-escalate') }}
               <template #badges>
                 <ElementBadge>TypeScript</ElementBadge>
                 <ElementBadge>Vue</ElementBadge>
@@ -100,12 +96,7 @@
           </li>
           <li>
             <TemplateContent title="Bitcoin Dashboard">
-              Ein persönliches Dashboard zur Echtzeit-Analyse von
-              Bitcoin-Marktdaten über verschiedene APIs. Das Projekt wurde zum
-              Großteil mittels KI entwickelt, um in diesem Bereich mehr
-              praktische Erfahrung zu sammeln. Das Tool visualisiert wichtige
-              Kennzahlen wie die Marktkapitalisierung und berechnet den
-              Portfolio-Wert dynamisch aus einer JSON-Transaktionsdatei.
+              {{ t('content.projects.btc-dashboard') }}
               <template #badges>
                 <ElementBadge>Angular</ElementBadge>
                 <ElementBadge>JavaScript</ElementBadge>
@@ -129,10 +120,7 @@
           </li>
           <!-- <li>
             <TemplateContent title="Sound of Code">
-              Ein experimentelles Projekt, das ich entwickelt habe, um die
-              Möglichkeit zu erkunden, Code in Klang umzuwandeln. Es nutzt die
-              Web Audio API, um Code-Snippets in Echtzeit in Klang zu
-              übersetzen.
+              {{ t('content.projects.sound-of-code') }}
               <template #badges>
                 <ElementBadge>JavaScript</ElementBadge>
                 <ElementBadge>HTML</ElementBadge>
@@ -146,12 +134,7 @@
           </li> -->
           <li>
             <TemplateContent title="Frendies UG">
-              Ein code Überbleibsel aus einer damaligen Selbstständigkeit, die
-              ich 2014 betrieben habe. Obwohl das Projekt nicht weiterentwickelt
-              wird, war es eine wertvolle Erfahrung in der Entwicklung moderner
-              Webtechnologien wie WebGL. Es bietet eine interaktive
-              3D-Erfahrung, die es Benutzern ermöglicht, mit Elementen zu
-              interagieren.
+              {{ t('content.projects.frendies-ug') }}
               <template #badges>
                 <ElementBadge>PHP</ElementBadge>
                 <ElementBadge>JavaScript</ElementBadge>
@@ -184,14 +167,9 @@
         class="page-space section-box half-container lg:mr-auto"
         :ref="(el) => observeSection(el as HTMLElement | null, 'balance')"
       >
-        <ElementH2 title="Leisure" subtitle="Balance" />
+        <ElementH2 title="Leisure" subtitle="Balance" lang="en" />
         <TemplateContent>
-          In meiner Freizeit bin ich sportlich aktiv und betreibe
-          Parkour/Freerunning, was mir die Möglichkeit bietet, meinen Ausgleich
-          zu finden.<br />
-          Im Zuge dessen betreue ich seit 2013 verschiedene Projekte und
-          Prozesse für Kinder und Jugendliche, um ihnen einen sicheren Raum für
-          den Sport zu bieten.
+          {{ t('content.balance.text') }}
         </TemplateContent>
         <ContentStepImg />
       </div>
@@ -204,7 +182,7 @@
       :ref="(el) => observeSection(el as HTMLElement | null, 'contact')"
     >
       <div class="page-space half-container space-y-12 lg:order-last">
-        <ElementH2 title="It's me" subtitle="Say Hello" />
+        <ElementH2 title="It's me" subtitle="Say Hello" lang="en" />
         <ContentSocial />
       </div>
       <ContentPortraitVideo />
@@ -215,21 +193,21 @@
 <script setup lang="ts">
 import { useNavigation } from '~/composables/useNavigation'
 
+const route = useRoute()
+const { t } = useI18n()
 const { observeSection } = useNavigation()
 
 useSeoMeta({
   // Title is define on app.vue by default
-  description:
-    'Florian Nußbaum ist ein Frontend Developer mit Fokus auf TypeScript und moderne Webtechnologien wie Vue und React.',
-  ogTitle: 'Florian Nußbaum',
-  ogDescription:
-    'Florian Nußbaum ist ein Frontend Developer mit Fokus auf TypeScript und moderne Webtechnologien wie Vue und React.',
+  description: t('seo.home.description'),
+  ogTitle: t('seo.home.ogTitle'),
+  ogDescription: t('seo.home.ogDescription'),
   ogType: 'website',
-  ogUrl: useRuntimeConfig().public.siteUrl + '/',
+  ogUrl: useRuntimeConfig().public.siteUrl + route.path,
 })
 
 definePageMeta({
   layout: 'custom',
-  name: 'Florian Nußbaum',
+  name: 'home',
 })
 </script>

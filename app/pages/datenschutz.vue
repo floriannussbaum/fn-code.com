@@ -1,8 +1,8 @@
 <template>
   <section class="bg-surface-primary">
     <div class="page-container page-space py-20">
-      <div class="prose">
-        <h1>Datenschutz</h1>
+      <div class="prose" lang="de">
+        <h1>Datenschutzerklärung</h1>
         <h2>1. Datenschutz auf einen Blick</h2>
         <h3>Allgemeine Hinweise</h3>
         <p>
@@ -494,20 +494,21 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
+const { t } = useI18n()
+
 useSeoMeta({
-  title: 'Datenschutz',
+  title: t('seo.privacyPolicy.title'),
   robots: 'noindex',
-  description:
-    'Datenschutzerklärung von Florian Nußbaum nach DSGVO. Informationen zur Verarbeitung personenbezogener Daten auf dieser Webseite.',
-  ogTitle: 'Datenschutz | Florian Nußbaum',
-  ogDescription:
-    'Datenschutzerklärung der Webseite von Florian Nußbaum gemäß DSGVO mit Hinweisen zur Datenverarbeitung.',
+  description: t('seo.privacyPolicy.description'),
+  ogTitle: t('seo.privacyPolicy.ogTitle'),
+  ogDescription: t('seo.privacyPolicy.ogDescription'),
   ogType: 'website',
-  ogUrl: useRuntimeConfig().public.siteUrl + '/datenschutz',
+  ogUrl: useRuntimeConfig().public.siteUrl + route.path,
 })
 
 definePageMeta({
   layout: 'default',
-  name: 'Datenschutz',
+  name: 'datenschutz',
 })
 </script>

@@ -9,10 +9,9 @@
       loop
       disablePictureInPicture
       poster="~/assets/images/preview.jpg"
-      aria-label="Video: Florian Nußbaum in Aktion."
+      :aria-label="$t('ariaLabel.video')"
     >
-      Ihr Browser unterstützt das Video-Tag leider nicht. Das Video zeigt
-      Florian Nußbaum in Aktion.
+      {{ $t('error.video') }}
       <source src="~/assets/videos/florian-nussbaum.mp4" type="video/mp4" />
     </video>
   </div>

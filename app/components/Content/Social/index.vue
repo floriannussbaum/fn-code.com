@@ -4,7 +4,7 @@
   >
     <li class="w-full sm:order-last sm:w-auto">
       <a
-        aria-label="E-Mail an Florian Nußbaum"
+        :aria-label="$t('ariaLabel.eMail')"
         href="mailto:florian@fn-code.com"
         rel="noopener"
         class="hover:text-icon-hover inline-flex items-center gap-2 py-1 whitespace-nowrap"
@@ -15,7 +15,7 @@
     </li>
     <li>
       <a
-        aria-label="GitHub Profil von Florian Nußbaum"
+        :aria-label="$t('ariaLabel.gitHub')"
         href="https://github.com/floriannussbaum/"
         rel="noopener"
         target="_blank"
@@ -30,7 +30,7 @@
     </li>
     <li>
       <a
-        aria-label="LinkedIn Profil von Florian Nußbaum"
+        :aria-label="$t('ariaLabel.linkedIn')"
         href="https://www.linkedin.com/in/floriannussbaum/"
         rel="noopener"
         target="_blank"

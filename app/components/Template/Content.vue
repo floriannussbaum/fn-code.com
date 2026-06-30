@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ElementH3 v-if="title">{{ title }}</ElementH3>
+    <ElementH3 v-if="title" lang="en">{{ title }}</ElementH3>
     <p
       v-if="$slots.default"
       class="font-400 text-font-secondary leading-7"

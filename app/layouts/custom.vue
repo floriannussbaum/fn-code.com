@@ -1,10 +1,10 @@
 <template>
-  <ControlColorMode>
+  <ActionTransition>
     <PageHero />
     <PageHeader />
     <main>
       <slot />
     </main>
     <PageFooter />
-  </ControlColorMode>
+  </ActionTransition>
 </template>

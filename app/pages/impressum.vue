@@ -1,7 +1,7 @@
 <template>
   <section class="bg-surface-primary">
     <div class="page-container page-space py-20">
-      <div class="prose">
+      <div class="prose" lang="de">
         <h1>Impressum</h1>
         <h2>
           Angaben gemäß § 5 TMG und Verantwortlicher gemäß § 18 Abs. 2 des MStV
@@ -82,20 +82,21 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
+const { t } = useI18n()
+
 useSeoMeta({
-  title: 'Impressum',
+  title: t('seo.legalNotice.title'),
   robots: 'noindex',
-  description:
-    'Impressum der Webseite von Florian Nußbaum. Angaben gemäß § 5 TMG mit Kontaktdaten und Verantwortlichen.',
-  ogTitle: 'Impressum | Florian Nußbaum',
-  ogDescription:
-    'Impressum der Webseite von Florian Nußbaum mit rechtlichen Angaben und Kontaktdaten.',
+  description: t('seo.legalNotice.description'),
+  ogTitle: t('seo.legalNotice.ogTitle'),
+  ogDescription: t('seo.legalNotice.ogDescription'),
   ogType: 'website',
-  ogUrl: useRuntimeConfig().public.siteUrl + '/impressum',
+  ogUrl: useRuntimeConfig().public.siteUrl + route.path,
 })
 
 definePageMeta({
   layout: 'default',
-  name: 'Impressum',
+  name: 'impressum',
 })
 </script>

@@ -2,7 +2,7 @@
   <nav
     v-show="isActive"
     id="mobile-drawer"
-    aria-label="Mobiles Hauptmenü"
+    :aria-label="$t('ariaLabel.nav.drawer')"
     :aria-hidden="!isActive"
     class="bg-surface-high fixed top-0 left-0 z-1000 flex h-full w-full items-center justify-center"
     :style="{

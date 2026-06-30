@@ -1,13 +1,16 @@
 <template>
-  <PageHeaderButton
+  <button
+    type="button"
     aria-live="polite"
-    :aria-label="isLight ? 'Dunkelmodus aktivieren' : 'Hellmodus aktivieren'"
+    :aria-label="$t('ariaLabel.nav.action.darkMode')"
+    :aria-pressed="isLight ? 'false' : 'true'"
+    class="page-header-button"
     @mouseover="isHover = true"
     @mouseleave="isHover = false"
     @click="toggleColorMode()"
   >
     <component :is="icon" class="h-full w-auto" />
-  </PageHeaderButton>
+  </button>
 </template>
 
 <script setup lang="ts">

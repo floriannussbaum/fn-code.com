@@ -1,15 +1,15 @@
 import type { RouterConfig } from '@nuxt/schema'
 
+function langPath(path: string): string {
+  return path.startsWith('/en') ? '/en' : '/'
+}
+
 export default <RouterConfig>{
   scrollBehavior(to, from, savedPosition) {
-    if (
-      (from.path === '/' && to.path === '/en') ||
-      (from.path === '/en' && to.path === '/')
-    ) {
-      return false
-    }
+    // No scroll if the user navigates to a different language
+    if (langPath(from.path) !== langPath(to.path)) return false
 
-    // Standardverhalten
+    // Default behavior
     if (to.hash) {
       return {
         el: to.hash,

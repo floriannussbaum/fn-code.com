@@ -15,7 +15,7 @@
         ref="snapshot"
         :class="[
           'bg-surface-secondary absolute top-0 left-0 w-full max-w-none will-change-transform',
-          isLight ? 'dark' : 'light',
+          toggleLight(isLanguage ? isLight : !isLight),
         ]"
       />
     </div>
@@ -24,19 +24,20 @@
       v-show="isActive"
       ref="sweep"
       aria-hidden="true"
-      class="pointer-events-none fixed top-0 left-0 z-[9999] h-[140px] w-full translate-y-[-140px] shadow-lg"
+      class="pointer-events-none fixed top-0 left-0 z-[9999] w-full shadow-lg"
       :style="{
+        height: `${sweepSize}px`,
         transition: `transform ${duration}ms cubic-bezier(0.76,0,0.24,1)`,
         transform: isAnimate
-          ? 'translateY(calc(100vh + 140px))'
-          : 'translateY(-140px)',
+          ? `translateY(calc(100vh + ${sweepSize}px))`
+          : `translateY(-${sweepSize}px)`,
       }"
     />
 
     <!-- Main layer -->
     <div
       ref="mainLayer"
-      :class="['bg-surface-secondary', isLight ? 'light' : 'dark']"
+      :class="['bg-surface-secondary', toggleLight(isLight)]"
     >
       <slot />
     </div>
@@ -46,34 +47,44 @@
 <script setup lang="ts">
 import { ref, watch, provide } from 'vue'
 
+const { setLocale, locale } = useI18n()
+const { y: scrollY } = useWindowScroll()
+
 const snapshotLayer = ref<HTMLElement | null>(null)
 const snapshot = ref<HTMLElement | null>(null)
 const mainLayer = ref<HTMLElement | null>(null)
 
-const { y: scrollY } = useWindowScroll()
 const isActive = ref<boolean>(false)
-const isAnimate = ref(false)
+const isAnimate = ref<boolean>(false)
 const isLight = useState<boolean>('isLight', () => true)
-const duration = <number>1200 // 1200
+const isLanguage = ref<boolean>(false)
+const duration = <number>1200
+const sweepSize = ref<number>(10)
 
 watch(scrollY, (val: number) => {
   if (isActive.value) snapshotLayer.value?.scrollTo(0, val)
 })
 
-function addClone(): void {
-  if (mainLayer.value && snapshot.value)
-    snapshot.value.innerHTML = mainLayer.value.innerHTML
+function toggleLight(isLight: boolean): string {
+  return isLight ? 'light' : 'dark'
 }
 
-function removeClone(): void {
-  if (snapshot.value) snapshot.value.replaceChildren()
-}
-
-async function toggleColorMode(): Promise<void> {
-  if (isActive.value || !snapshotLayer.value) return
-  addClone()
+async function viewTransition(
+  callback: () => void,
+  sweep?: number,
+): Promise<void> {
+  if (
+    isActive.value ||
+    !snapshotLayer.value ||
+    !mainLayer.value ||
+    !snapshot.value
+  )
+    return
+  sweepSize.value = sweep ?? 10
+  snapshot.value.innerHTML = mainLayer.value.innerHTML // Clone
   isActive.value = true
-  isLight.value = !isLight.value
+
+  await callback()
 
   await nextTick()
   isAnimate.value = true
@@ -84,9 +95,24 @@ async function toggleColorMode(): Promise<void> {
   setTimeout(() => {
     isActive.value = false
     isAnimate.value = false
-    removeClone()
+    snapshot.value?.replaceChildren() // Remove clone
   }, duration + 50)
 }
 
+function toggleColorMode(): void {
+  viewTransition(() => {
+    isLight.value = !isLight.value
+  }, 140)
+}
+
+function toggleLanguage(): void {
+  viewTransition(() => {
+    isLanguage.value = true // Flag to indicate a language change is in progress
+    setLocale(locale.value === 'de' ? 'en' : 'de')
+    setTimeout(() => (isLanguage.value = false), duration + 50) // Cleanup
+  }, 10)
+}
+
 provide('toggleColorMode', toggleColorMode)
+provide('toggleLanguage', toggleLanguage)
 </script>

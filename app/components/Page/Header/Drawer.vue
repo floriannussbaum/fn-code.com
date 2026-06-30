@@ -12,7 +12,7 @@
     @click="emit('close')"
   >
     <ul
-      class="text-font-primary font-500 h-vh flex flex-col items-center justify-center space-y-4 text-5xl"
+      class="text-font-sec font-500 h-vh flex flex-col items-center justify-center space-y-4 text-5xl"
       :style="{
         transition: `transform ${duration}ms cubic-bezier(0.785, 0.135, 0.15, 0.86)`,
         transform: isOpen ? 'translateY(0%)' : 'translateY(-100vh)',
@@ -26,7 +26,7 @@
         <NuxtLink
           :to="item.link"
           class="text-align-center block translate-y-full cursor-pointer px-4 py-2"
-          :class="[activeSection === item.name && 'text-font-sec']"
+          :class="[activeSection === item.name && 'text-font-primary']"
           :style="{
             transition: `transform 0.4s ${isOpen ? 300 + i * 80 : duration}ms cubic-bezier(0.785, 0.135, 0.15, 0.86)`,
             transform: isOpen ? 'translateY(0%)' : 'translateY(100%)',

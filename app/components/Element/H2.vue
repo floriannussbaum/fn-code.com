@@ -6,14 +6,8 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    title?: string
-    subtitle?: string
-  }>(),
-  {
-    title: undefined,
-    subtitle: undefined,
-  },
-)
+defineProps<{
+  title?: string
+  subtitle?: string
+}>()
 </script>

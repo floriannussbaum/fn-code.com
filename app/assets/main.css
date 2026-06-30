@@ -82,6 +82,7 @@
   font-weight: 900;
   src: url('./fonts/noto-sans-v42-latin-900.woff2') format('woff2');
 }
+
 :root {
   font-family: 'Noto Sans', sans-serif, Arial;
   --default: #202327;

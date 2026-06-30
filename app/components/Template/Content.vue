@@ -18,14 +18,9 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    title?: string
-  }>(),
-  {
-    title: undefined,
-  },
-)
+defineProps<{
+  title?: string
+}>()
 
 defineOptions({
   inheritAttrs: false,

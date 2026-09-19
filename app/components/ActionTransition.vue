@@ -124,4 +124,5 @@ function action(action: ActionType): void {
 }
 
 provide('action', action)
+provide('isActive', isActive)
 </script>

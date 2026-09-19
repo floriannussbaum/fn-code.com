@@ -7,7 +7,7 @@
     class="page-header-button"
     @mouseover="isHover = true"
     @mouseleave="isHover = false"
-    @click="toggleColorMode()"
+    @click="action('toggleColorMode')"
   >
     <component :is="icon" class="h-full w-auto" />
   </button>
@@ -21,8 +21,10 @@ import {
   SunIcon as SunIconSolid,
 } from '@heroicons/vue/24/solid'
 import type { FunctionalComponent } from 'vue'
+import type { ActionType } from '~/components/ActionTransition.vue'
 
-const toggleColorMode = inject('toggleColorMode', () => {})
+const action = inject<(type: ActionType) => void>('action', () => {})
+
 const isLight = useState('isLight')
 
 const isHover = ref<boolean>(false)

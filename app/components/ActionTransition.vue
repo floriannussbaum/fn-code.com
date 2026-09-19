@@ -47,6 +47,8 @@
 <script setup lang="ts">
 import { ref, watch, provide } from 'vue'
 
+export type ActionType = 'toggleColorMode' | 'toggleLanguage'
+
 const { setLocale, locale } = useI18n()
 const { y: scrollY } = useWindowScroll()
 
@@ -113,6 +115,13 @@ function toggleLanguage(): void {
   }, 10)
 }
 
-provide('toggleColorMode', toggleColorMode)
-provide('toggleLanguage', toggleLanguage)
+function action(action: ActionType): void {
+  if (action === 'toggleColorMode') {
+    toggleColorMode()
+  } else if (action === 'toggleLanguage') {
+    toggleLanguage()
+  }
+}
+
+provide('action', action)
 </script>

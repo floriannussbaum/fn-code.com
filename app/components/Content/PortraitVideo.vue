@@ -10,6 +10,9 @@
       disablePictureInPicture
       poster="~/assets/images/preview.jpg"
       :aria-label="$t('ariaLabel.video')"
+      :style="{
+        filter: isLight ? '' : 'brightness(0.65) contrast(1) saturate(1.2)',
+      }"
     >
       {{ $t('error.video') }}
       <source src="~/assets/videos/florian-nussbaum.mp4" type="video/mp4" />
@@ -18,8 +21,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
 import { useObserver } from '~/composables/useObserver'
+import type { Ref } from 'vue'
+
+const isLight = inject<Ref<string>>('isLight')
 
 const videoPlayer = ref<HTMLVideoElement | null>(null)
 const time = 1.4

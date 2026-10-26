@@ -9,13 +9,16 @@
       class="absolute top-0 left-0 h-[513px] w-[12000px] max-w-none"
       :style="{
         transform: `translateX(-${motionState.translateX}px)`,
+        filter: isLight ? '' : 'brightness(0.65) contrast(1) saturate(1.2)',
       }"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, inject, watch } from 'vue'
+
+const isLight = inject<Ref<string>>('isLight')
 
 interface ElementStats {
   top: number

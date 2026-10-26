@@ -158,4 +158,5 @@ function action(action: ActionType): void {
 
 provide('action', action)
 provide('isActive', isActive)
+provide('isLight', isLight)
 </script>

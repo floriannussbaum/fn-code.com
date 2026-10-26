@@ -18,11 +18,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, inject, watch } from 'vue'
+import { ref } from 'vue'
 import { useObserver } from '~/composables/useObserver'
-import type { Ref } from 'vue'
-
-const isActive = inject<Ref<boolean>>('isActive')
 
 const videoPlayer = ref<HTMLVideoElement | null>(null)
 const time = 1.4
@@ -42,15 +39,6 @@ function videoStop(sekunden: number): void {
   videoPlayer.value.pause()
 }
 
-function videoSync(): void {
-  if (!videoPlayer.value) return
-  const currentTime = videoPlayer.value?.currentTime ?? 0
-  const snapshotVideo = document.querySelectorAll('video')
-  if (!snapshotVideo[0] || !snapshotVideo[1]) return
-  snapshotVideo[0].currentTime = currentTime
-  snapshotVideo[0].play()
-}
-
 useObserver(
   videoPlayer,
   ([entry]) => {
@@ -65,12 +53,5 @@ useObserver(
     if (!entry?.isIntersecting && isPlaying.value) videoStop(time)
   },
   { rootMargin: '0px 0px -5% 0px', threshold: 0 },
-)
-
-watch(
-  () => isActive?.value,
-  (isActive) => {
-    if (isActive) videoSync()
-  },
 )
 </script>

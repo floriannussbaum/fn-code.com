@@ -14,7 +14,7 @@ Previous Version: [v1](https://github.com/floriannussbaum/vue-portfolio)
 [![Nuxt](https://skillicons.dev/icons?i=nuxt)](https://nuxt.com)
 [![Tailwindcss](https://skillicons.dev/icons?i=tailwindcss)](https://tailwindcss.com/)
 
-### Node version 24.2.0
+### Node version 24.22.1
 
 ## Usage
 
